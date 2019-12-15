@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import ImgMediaCard from './ImgMediaCard';
 
 function Copyright() {
   return (
@@ -133,6 +134,7 @@ export default function Album() {
                 </Card>
               </Grid>
             ))}
+            <ImgMediaCard></ImgMediaCard>
           </Grid>
         </Container>
       </main>
