@@ -15,20 +15,16 @@ export default class FormCar extends PureComponent {
           carInfo: '',
         };
       }
-      /**
-       *  API REQUESTS
-       *
-       **/
+
     handleOnChangePlaca = (event) => {
         if (!event) { return; }
         this.setState({ placa: event.target.value });
       }
-     
-
 
     handlerCarinfo = async event => {
         try{
 
+          this.setState({placa: "AQWD1563"});
          /* Precificador de Chassi dps de pegar a placa*/
          const headers = {
             'Content-Type': 'application/json',
@@ -74,13 +70,16 @@ export default class FormCar extends PureComponent {
         }
       }
 
+      componentDidMount() {
+          this.handlerCarinfo();
+      }
+
 render() {
     return (
         <React.Fragment>
         <Typography variant="h6" gutterBottom>
             Carro
         </Typography>
-       
         <Grid container spacing={3}>
             <Grid item xs={12}>
             <TextField required id="placa" label="Placa do carro" fullWidth />
