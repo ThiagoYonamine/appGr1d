@@ -15,6 +15,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Switch from '@material-ui/core/Switch';
 
@@ -43,6 +44,15 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function ImgMediaCard() {
+  const [state, setState] = React.useState({
+    checkedA: true,
+    checkedB: true,
+  });
+
+  const handleChange = name => event => {
+    setState({ ...state, [name]: event.target.checked });
+  };
+
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -84,9 +94,22 @@ export default function ImgMediaCard() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={5}>
           <Typography paragraph><b>Colisão</b></Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+          <Switch
+            checked={true}
+            value="checked"
+            color="primary"
+            inputProps={{ 'aria-label': 'primary checkbox' }}
+          />
+          </Grid>
+          </Grid>
 
           <Typography paragraph>Vale para perda total</Typography>
+
           <Typography paragraph>
           Se acontecer um acidente e seu carro “já era”? Não desespera! Em caso de perda total em batidas, capotagens, queda do veículo ou queda de qualquer objeto que cause a perda total do seu carro, essa cobertura garante que vc receba o valor que contratou no seguro.
 INDENIZAÇÃO DE 100% DA TABELA FIPE
@@ -95,29 +118,78 @@ INDENIZAÇÃO DE 100% DA TABELA FIPE
 <Typography paragraph>Vale para qualquer batida</Typography>
           Se rolar algum acidente com seu carro, seja batida, capotagem, incêndio ou alagamento, ou até mesmo se ele foi roubado ou furtado e, depois, encontrado com problemas, você pode acionar essa cobertura que pagamos o conserto pra você. Mas fique ligado: o valor pra deixar tudo em ordem tem que ser superior ao valor que você definiu de franquia, ok? ;)
           </Typography>
-          <Typography paragraph><b>
-          Incêndio</b>
-          </Typography>
+
+          <Grid container spacing={3}>
+          <Grid item xs={12} md={5}>
+          <Typography paragraph><b>Incêndio  (+R$20)</b></Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+          <Switch
+            value="checked"
+            color="primary"
+            inputProps={{ 'aria-label': 'primary checkbox' }}
+          />
+          </Grid>
+          </Grid>
+
           <Typography paragraph>
           Se seu veículo der PT porque pegou fogo, explodiu ou caiu um raio, vc recebe seu seguro integral pra compensar o prejuízo.
 INDENIZAÇÃO DE 100% DA TABELA FIPE
           </Typography>
-          <Typography paragraph><b>
-          Roubo e furto</b>
-          </Typography>
+
+
+          <Grid container spacing={3}>
+          <Grid item xs={12} md={5}>
+          <Typography paragraph><b>Roubo e furto</b></Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+          <Switch
+            checked={state.checkedB}
+            onChange={handleChange('checkedB')}
+            value="checkedB"
+            color="primary"
+            inputProps={{ 'aria-label': 'primary checkbox' }}
+          />
+          </Grid>
+          </Grid>
+
           <Typography paragraph>
           Que @#$%! Seu carro foi roubado? Calma, calma. Se em trinta dias ele não for encontrado a gente paga o valor total do seu seguro. Mas se for e estiver bem, bem detonado – deu PT – a gente também cobre o seguro pra você.
 INDENIZAÇÃO DE 100% DA TABELA FIPE
           </Typography>
-          <Typography paragraph><b>
-          alagamento e eventos da natureza</b>
-          </Typography>
+
+          <Grid container spacing={3}>
+          <Grid item xs={12} md={5}>
+          <Typography paragraph><b>Alagamento e eventos da natureza (+R$20)</b></Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+          <Switch
+            value="checked"
+            color="primary"
+            inputProps={{ 'aria-label': 'primary checkbox' }}
+          />
+          </Grid>
+          </Grid>
+
           <Typography paragraph>
           Se seu carro foi pego de surpresa no meio de uma inundação, alagamento, granizo ou ventos fortes e deu PT, não se preocupe. Você tem direito ao valor integral de seu seguro pra cobrir seu prejuízo.
           </Typography>
-          <Typography paragraph><b>
-          Danos materiais a terceiros</b>
-          </Typography>
+
+          <Grid container spacing={3}>
+          <Grid item xs={12} md={5}>
+          <Typography paragraph><b>Danos materiais a terceiros  (+R$30)</b></Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+          <Switch
+            checked={state.checkedC}
+            onChange={handleChange('checkedC')}
+            value="checkedC"
+            color="primary"
+            inputProps={{ 'aria-label': 'primary checkbox' }}
+          />
+          </Grid>
+          </Grid>
+
           <Typography paragraph>
           Se acontecer um acidente que envolva os bens de outras pessoas, você conta com essa ajuda pra bancar as despesas que tiver com reparos, reposições e até mesmo com advogados, se for o caso.
           </Typography>

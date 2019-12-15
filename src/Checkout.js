@@ -10,11 +10,12 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-import AddressForm from './AddressForm';
-import PaymentForm from './PaymentForm';
-import Review from './Review';
+import FormDados from './FormDados';
+import FormCar from './FormCar';
+import FormNegocios from './FormNegocios';
 import Album from './Album';
 import ImgMediaCard from './ImgMediaCard';
+import FormCard from './FormCard';
 import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
@@ -59,17 +60,15 @@ const steps = ['Sobre você', 'Sobre o carro', 'Negociação', 'Ofertas', 'Pagam
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <AddressForm />;
+      return <FormDados />;
     case 1:
-      return <PaymentForm />;
+      return <FormCar />;
     case 2:
-      return <Review />;
+      return <FormNegocios />;
     case 3:
       return <ImgMediaCard />;
     case 4:
-      return <Review />;
-    case 5:
-      return <Review />;
+      return <FormCard />;
     default:
       throw new Error('Unknown step');
   }
@@ -93,14 +92,15 @@ export default function Checkout() {
       <AppBar position="absolute" color="primary" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            Company name
+          <img src={require('./logo.png')} alt="car" height='70px' width='100px'></img>
+            
           </Typography>
         </Toolbar>
       </AppBar>
         
       </Grid>
       <Grid item xs={12} >
-        <img src={require('./img_header3.jpg')} alt="img header"  width={window.innerWidth}></img>
+        <img src={require('./img_header3.jpg')} alt="img header"  width={window.innerWidth-16}></img>
       </Grid>
 
     <React.Fragment>
@@ -127,11 +127,10 @@ export default function Checkout() {
             {activeStep === steps.length ? (
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
-                  Thank you for your order.
+                  Tudo certo!
                 </Typography>
                 <Typography variant="subtitle1">
-                  Your order number is #2001539. We have emailed your order confirmation, and will
-                  send you an update when your order has shipped.
+                  Agora você já pode curtir a vida do melhor jeito! 
                 </Typography>
               </React.Fragment>
             ) : (
@@ -156,10 +155,13 @@ export default function Checkout() {
             )}
           </React.Fragment>
         </Paper>
-        <Copyright />
+
+
       </main>
     </React.Fragment>
-
+    <Grid item xs={12} >
+    <img src={require('./grid.jpg')} alt="img header"  width={window.innerWidth-16}></img>
+      </Grid>
     </div>
   );
 }
