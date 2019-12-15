@@ -16,10 +16,12 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Button from '@material-ui/core/Button';
+import Switch from '@material-ui/core/Switch';
 
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 550,
+    marginTop: '10px'
   },
   media: {
     height: 0,
@@ -49,20 +51,20 @@ export default function ImgMediaCard() {
   };
 
   return (
+    <React.Fragment>
     <Card className={classes.card}>
       <CardHeader
-        title="Seguradora Teste"
-        subheader="R$4500,00"
+        title="Seguradora Stark"
+        subheader="R$56,25 / mês"
       />
       <CardMedia
         className={classes.media}
-        image="../car-assist.jpg"
+        image="../car-assist1.jpg"
         title="Car Assist"
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          Colisão, incêndio, roubo e furto, alagamento e eventos da natureza e danos materiais a terceiros.
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -82,31 +84,167 @@ export default function ImgMediaCard() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
+          <Typography paragraph><b>Colisão</b></Typography>
+
+          <Typography paragraph>Vale para perda total</Typography>
           <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-            minutes.
+          Se acontecer um acidente e seu carro “já era”? Não desespera! Em caso de perda total em batidas, capotagens, queda do veículo ou queda de qualquer objeto que cause a perda total do seu carro, essa cobertura garante que vc receba o valor que contratou no seguro.
+INDENIZAÇÃO DE 100% DA TABELA FIPE
+<br></br>
+<br></br>
+<Typography paragraph>Vale para qualquer batida</Typography>
+          Se rolar algum acidente com seu carro, seja batida, capotagem, incêndio ou alagamento, ou até mesmo se ele foi roubado ou furtado e, depois, encontrado com problemas, você pode acionar essa cobertura que pagamos o conserto pra você. Mas fique ligado: o valor pra deixar tudo em ordem tem que ser superior ao valor que você definiu de franquia, ok? ;)
+          </Typography>
+          <Typography paragraph><b>
+          Incêndio</b>
           </Typography>
           <Typography paragraph>
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-            heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-            browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken
-            and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and
-            pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add
-            saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
+          Se seu veículo der PT porque pegou fogo, explodiu ou caiu um raio, vc recebe seu seguro integral pra compensar o prejuízo.
+INDENIZAÇÃO DE 100% DA TABELA FIPE
+          </Typography>
+          <Typography paragraph><b>
+          Roubo e furto</b>
           </Typography>
           <Typography paragraph>
-            Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
-            without stirring, until most of the liquid is absorbed, 15 to 18 minutes. Reduce heat to
-            medium-low, add reserved shrimp and mussels, tucking them down into the rice, and cook
-            again without stirring, until mussels have opened and rice is just tender, 5 to 7
-            minutes more. (Discard any mussels that don’t open.)
+          Que @#$%! Seu carro foi roubado? Calma, calma. Se em trinta dias ele não for encontrado a gente paga o valor total do seu seguro. Mas se for e estiver bem, bem detonado – deu PT – a gente também cobre o seguro pra você.
+INDENIZAÇÃO DE 100% DA TABELA FIPE
+          </Typography>
+          <Typography paragraph><b>
+          alagamento e eventos da natureza</b>
+          </Typography>
+          <Typography paragraph>
+          Se seu carro foi pego de surpresa no meio de uma inundação, alagamento, granizo ou ventos fortes e deu PT, não se preocupe. Você tem direito ao valor integral de seu seguro pra cobrir seu prejuízo.
+          </Typography>
+          <Typography paragraph><b>
+          Danos materiais a terceiros</b>
+          </Typography>
+          <Typography paragraph>
+          Se acontecer um acidente que envolva os bens de outras pessoas, você conta com essa ajuda pra bancar as despesas que tiver com reparos, reposições e até mesmo com advogados, se for o caso.
           </Typography>
           <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
+            <b>Download </b>
           </Typography>
         </CardContent>
       </Collapse>
     </Card>
+
+    <Card spacing={3} className={classes.card}>
+    <CardHeader
+      title="Seguradora Lannister"
+      subheader="R$960,00 / mês"
+    />
+    <CardMedia
+      className={classes.media}
+      image="../car-assist2.jpg"
+      title="Car Assist"
+    />
+    <CardContent>
+      <Typography variant="body2" color="textSecondary" component="p">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet odio rutrum, sodales nisi et, viverra nunc.
+        Vestibulum sit amet pretium mauris, et gravida eros. Morbi rhoncus id tellus mattis varius.
+      </Typography>
+    </CardContent>
+    <CardActions disableSpacing>
+      <Button size="small" color="primary">
+        Contratar
+      </Button>
+      <IconButton
+        className={clsx(classes.expand, {
+          [classes.expandOpen]: expanded,
+        })}
+        onClick={handleExpandClick}
+        aria-expanded={expanded}
+        aria-label="show more"
+      >
+        <ExpandMoreIcon />
+      </IconButton>
+    </CardActions>
+    <Collapse in={expanded} timeout="auto" unmountOnExit>
+      <CardContent>
+        <Typography paragraph>Method:</Typography>
+        <Typography paragraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet odio rutrum, sodales nisi et, viverra nunc.
+        Vestibulum sit amet pretium mauris, et gravida eros. Morbi rhoncus id tellus mattis varius.
+        </Typography>
+        <Typography paragraph>
+        Donec dignissim libero vel arcu vulputate, id volutpat sapien consequat.
+          Nulla auctor fermentum eleifend. Donec ex sem, tempor eget urna eu, malesuada maximus magna.
+          Nullam nisl mi, laoreet id blandit quis, bibendum sit amet elit. Pellentesque rutrum at tellus sit amet feugiat.
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit.
+        </Typography>
+        <Typography paragraph>
+        Donec dignissim libero vel arcu vulputate, id volutpat sapien consequat.
+          Nulla auctor fermentum eleifend. Donec ex sem, tempor eget urna eu, malesuada maximus magna.
+          Nullam nisl mi, laoreet id blandit quis, bibendum sit amet elit. Pellentesque rutrum at tellus sit amet feugiat.
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit.
+        </Typography>
+        <Typography>
+        <b>Download </b>
+        </Typography>
+      </CardContent>
+    </Collapse>
+  </Card>
+
+  <Card className={classes.card}>
+  <CardHeader
+    title="Seguradora Targaryen"
+    subheader="R$1.042,00 / mês"
+  />
+  <CardMedia
+    className={classes.media}
+    image="../car-assist3.jpg"
+    title="Car Assist"
+  />
+  <CardContent>
+    <Typography variant="body2" color="textSecondary" component="p">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet odio rutrum, sodales nisi et, viverra nunc.
+        Vestibulum sit amet pretium mauris, et gravida eros. Morbi rhoncus id tellus mattis varius.
+    </Typography>
+  </CardContent>
+  <CardActions disableSpacing>
+    <Button size="small" color="primary">
+      Contratar
+    </Button>
+    <IconButton
+      className={clsx(classes.expand, {
+        [classes.expandOpen]: expanded,
+      })}
+      onClick={handleExpandClick}
+      aria-expanded={expanded}
+      aria-label="show more"
+    >
+      <ExpandMoreIcon />
+    </IconButton>
+  </CardActions>
+  <Collapse in={expanded} timeout="auto" unmountOnExit>
+    <CardContent>
+      <Typography paragraph>Method:</Typography>
+      <Typography paragraph>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet odio rutrum, sodales nisi et, viverra nunc.
+        Vestibulum sit amet pretium mauris, et gravida eros. Morbi rhoncus id tellus mattis varius.
+      </Typography>
+      <Typography paragraph>
+      Donec dignissim libero vel arcu vulputate, id volutpat sapien consequat.
+          Nulla auctor fermentum eleifend. Donec ex sem, tempor eget urna eu, malesuada maximus magna.
+          Nullam nisl mi, laoreet id blandit quis, bibendum sit amet elit. Pellentesque rutrum at tellus sit amet feugiat.
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit.
+      </Typography>
+      <Typography paragraph>
+      Donec dignissim libero vel arcu vulputate, id volutpat sapien consequat.
+          Nulla auctor fermentum eleifend. Donec ex sem, tempor eget urna eu, malesuada maximus magna.
+          Nullam nisl mi, laoreet id blandit quis, bibendum sit amet elit. Pellentesque rutrum at tellus sit amet feugiat.
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit.
+      </Typography>
+      <Typography>
+      <b>Download </b>
+      </Typography>
+    </CardContent>
+  </Collapse>
+</Card>
+</React.Fragment>
   );
 }
