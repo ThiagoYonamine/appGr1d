@@ -111,27 +111,6 @@ export default class AddressForm extends PureComponent {
          );
          this.setState( {cnhInfo: res.data });
 
-          /* Esta pesquisa retorna uma régua de risco de avaliação do veículo,
-          seus critérios e parâmetros levam em consideração itens que possam vir 
-          a depreciar o veículo, tais como passagem por leilão, passagem por locadora,
-          órgão público, registro de sinistro anterior, dentre outros.*/
-          const Parecerheaders = {
-            'Content-Type': 'application/json',
-            'X-Api-Key': '2c6928e2-d39f-448b-a7b1-c40065e50e3e',
-          };
-          const ParecerRequest = {
-            parameters: {
-              cpf: this.state.cpf
-            }
-           };
-          res = await axios.post(
-            `https://gateway.gr1d.io/production/infocar/parecertecnicoplus/v1/ParecerTecnicoPlus`, 
-            ParecerRequest,
-            {headers: Parecerheaders}
-           );
-
-           //todo a api esta mockada e n esta retornando informaçoes certas.
-           this.setState( {carInfo: res.data });
  
         //this.setState({result: res.data});
        //const persons = res.data;
@@ -153,7 +132,7 @@ export default class AddressForm extends PureComponent {
     return (
       <React.Fragment>
         <Typography variant="h6" gutterBottom>
-          Shipping address
+          Sobre você
       </Typography>
         <form onSubmit={this.mySubmitHandler}>
           <Grid container spacing={3}>

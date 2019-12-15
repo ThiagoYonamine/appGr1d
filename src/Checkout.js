@@ -13,19 +13,9 @@ import Typography from '@material-ui/core/Typography';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Compre
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import Album from './Album';
+import ImgMediaCard from './ImgMediaCard';
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -64,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+const steps = ['Sobre você', 'Sobre o carro', 'Negociação', 'Ofertas', 'Pagamento'];
 
 function getStepContent(step) {
   switch (step) {
@@ -73,6 +63,12 @@ function getStepContent(step) {
     case 1:
       return <PaymentForm />;
     case 2:
+      return <Review />;
+    case 3:
+      return <ImgMediaCard />;
+    case 4:
+      return <Review />;
+    case 5:
       return <Review />;
     default:
       throw new Error('Unknown step');
@@ -92,20 +88,34 @@ export default function Checkout() {
   };
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <AppBar position="absolute" color="default" className={classes.appBar}>
+      <div>
+      <Grid>
+      <AppBar position="absolute" color="primary" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
             Company name
           </Typography>
         </Toolbar>
       </AppBar>
+        
+      </Grid>
+      <Grid item xs={12} >
+        <img src={require('./img_header3.jpg')} alt="img header"  width={window.innerWidth}></img>
+      </Grid>
+
+    <React.Fragment>
+      <CssBaseline />
       <main className={classes.layout}>
         <Paper className={classes.paper}>
+        <Typography component="h1" variant="h4" align="center">
+        <img src={require('./car.png')} alt="car" height='50px' width='50px'></img>
+        </Typography>
+      
           <Typography component="h1" variant="h4" align="center">
-            Checkout
+            Cotação agora!
+           
           </Typography>
+        
           <Stepper activeStep={activeStep} className={classes.stepper}>
             {steps.map(label => (
               <Step key={label}>
@@ -149,5 +159,7 @@ export default function Checkout() {
         <Copyright />
       </main>
     </React.Fragment>
+
+    </div>
   );
 }
