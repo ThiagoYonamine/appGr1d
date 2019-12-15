@@ -13,7 +13,6 @@ import Typography from '@material-ui/core/Typography';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
-import Album from './Album';
 
 function Copyright() {
   return (
@@ -146,9 +145,6 @@ export default function Checkout() {
               </React.Fragment>
             )}
           </React.Fragment>
-
-          <Album></Album>
-          
         </Paper>
         <Copyright />
       </main>
