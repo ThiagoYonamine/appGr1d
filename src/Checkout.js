@@ -14,6 +14,7 @@ import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
 import Album from './Album';
+import ImgMediaCard from './ImgMediaCard';
 
 function Copyright() {
   return (
@@ -65,7 +66,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+const steps = ['Sobre você', 'Sobre o carro', 'Negociação', 'Ofertas', 'Pagamento'];
 
 function getStepContent(step) {
   switch (step) {
@@ -74,6 +75,12 @@ function getStepContent(step) {
     case 1:
       return <PaymentForm />;
     case 2:
+      return <Review />;
+    case 3:
+      return <ImgMediaCard />;
+    case 4:
+      return <Review />;
+    case 5:
       return <Review />;
     default:
       throw new Error('Unknown step');

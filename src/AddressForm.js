@@ -39,7 +39,7 @@ export default class AddressForm extends PureComponent {
     return (
       <React.Fragment>
         <Typography variant="h6" gutterBottom>
-          Shipping address
+          Sobre você
       </Typography>
         <form onSubmit={this.mySubmitHandler}>
           <Grid container spacing={3}>
